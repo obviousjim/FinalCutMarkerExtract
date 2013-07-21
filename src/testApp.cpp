@@ -61,7 +61,7 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 	ofBuffer buffer;
 	string xmlFile = dragInfo.files[0];
 	ofxXmlSettings fcpFile;
-	if(fcpFile.load(xmlFile)){
+	if(fcpFile.loadFile(xmlFile)){
 		fcpFile.pushTag("xmeml");
 		int numSequences = fcpFile.getNumTags("sequence");
 		for(int i = 0; i < numSequences; i++){
@@ -80,7 +80,7 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 				for(int c = 0; c < numClipItems; c++){
 					fcpFile.pushTag("clipitem", c);
 					string fileID = fcpFile.getAttribute("file", "id", "");
-					string clipFileName = fcpFile.getValue("file:name", "");
+					string clipFileName = fcpFile.getValue("file:pathurl", "");
 					buffer.append("    "+clipFileName + ":\n");
 
 					int numMarkers = fcpFile.getNumTags("marker");
