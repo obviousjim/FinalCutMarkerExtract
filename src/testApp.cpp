@@ -90,13 +90,13 @@ void testApp::dragEvent(ofDragInfo dragInfo){
 						fcpFile.popTag(); //marker
 					}
 
-                    fcpFile.popTag(); //clipitem
+					fcpFile.popTag(); //clipitem
 				}
 				fcpFile.popTag(); // track;
 			}
-            fcpFile.popTag(); //video
-            fcpFile.popTag(); //media
-            fcpFile.popTag(); //sequence
+			fcpFile.popTag(); //video
+			fcpFile.popTag(); //media
+			fcpFile.popTag(); //sequence
         }
         fcpFile.popTag(); //xmeml
 	}
